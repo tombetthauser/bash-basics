@@ -76,7 +76,7 @@ These are some very basic commands that can be run directly in your shell applic
 
 ---
 
-If Statements
+## If Statements
 ```bash
   # some basic conditionals...
 
