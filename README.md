@@ -13,6 +13,7 @@ Some things I've found interesting and helpful as I've slowly learned how to mak
 * [check your shell](#check-your-shell)
 * [comments printing & variables](#comments-printing--variables)
 * [if statements](#if-statements)
+* [greater than & less than](#greater-than--less-than)
 
 ---
 
@@ -113,3 +114,27 @@ These are some very basic commands that can be run directly in your shell applic
 
 ```
 
+---
+
+## Greater Than & Less Than
+```bash
+  if [ 1 -gt 0 ]
+  then
+    echo '1 is greater than 0!'
+  fi
+  
+  if [ 0 -gt 1 ]
+  then
+    echo 'this wont print!'
+  fi
+  
+  if [ 0 -lt 1 ]
+  then
+    echo '0 is less than 1!'
+  fi
+  
+  if [ 1 -eq 1 ]
+  then
+    echo 'we can use -eq instead of "="'
+  fi
+```
