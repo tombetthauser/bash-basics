@@ -27,9 +27,11 @@ We don't have that much need for multiple users to share the same machine concur
 
 ---
 
-## Check Your Shell
+# The Basics
 
 These are some very basic commands that can be run directly in your shell application (terminal etc). They can also be run as part of scripts if you save them in a file ending in sh (ie test-script.sh) and make use of them as individual lines or in more complex scenarios.
+
+## Check Your Shell
 
 ```bash
   # confirm that you're running bash and not zsh...
@@ -77,6 +79,10 @@ These are some very basic commands that can be run directly in your shell applic
 
 ---
 
+# Conditionals and Loops
+
+These can be written directly in the shell but are probably best written in a script file and then run. Make a file ending in sh (my-script.sh), write any valid bash syntax, save it, exit your editor and then run the file by typing ```$ bash my-script.sh``` which will run all the files commands.
+
 ## If Statements
 ```bash
   # some basic conditionals...
@@ -112,6 +118,32 @@ These are some very basic commands that can be run directly in your shell applic
   
   if [ 1 = 1 ]; then echo 'one line conditional!'; fi
 
+  # quotes are not needed if spaces aren't in variables...
+  a="cat"
+  b="cat"
+  if [ $b = $a ]
+  then
+    echo 'true!'
+  fi
+
+  # quotes are needed if spaces aren't in variables...
+  a="my cat"
+  b="my cat"
+  if [ "$b" = "$a" ]
+  then
+    echo 'true!'
+  fi
+
+  # double equals is just alternative syntax...
+  if [ 1 == 1 ]
+  then
+    echo 'double equals works!'
+  fi
+  
+  # all equals comparisons are loose...
+  if [ "1" == 1 ]; then echo 'true!'; fi
+  if [ "1" = 1 ]; then echo 'also true!'; fi
+  
 ```
 
 ---
@@ -137,4 +169,10 @@ These are some very basic commands that can be run directly in your shell applic
   then
     echo 'we can use -eq instead of "="'
   fi
+  
+  # note that quotes don't matter...
+  if [ "1" -gt 0 ]; then echo 'true!'; fi
+  if [ "1" -eq 1 ]; then echo 'also true!'; fi
+  if [ "1" -lt 0 ]; then echo 'not true!'; fi
+
 ```
