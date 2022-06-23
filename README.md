@@ -2,15 +2,16 @@
 
 # Bash Basics
 
-Some things I've found interesting and helpful as I've slowly learned how to make practical use of bash scripts one silly project at a time. More geared towards making automation scripts than advanced use of the shell for workflow optimization etc. An imperfect reflection of my imperfect self-teaching process.
+Some things I've found interesting and helpful as I've slowly learned how to make practical use of bash scripts one silly project at a time. More geared towards making clunky scripts for automating file system stuff than advanced use of the shell for workflow optimization etc.
 
 ```
 ⚠️ Warning: This is a work in progress and very much a reflection of a self-taught perspective!
 ```
 
 ### Contents:
-* [What is Bash?](#what-is-bash)
-* [Simple Commands](#simple-commands)
+* [what is bash](#what-is-bash)
+* [check your shell](#check-your-shell)
+* [comments printing and variables](#comments-printing-and-variables)
 
 ---
 
@@ -24,28 +25,27 @@ We don't have that much need for multiple users to share the same machine concur
 
 ---
 
-## Simple Commands
+## Check Your Shell
 
 These are some very basic commands that can be run directly in your shell application (terminal etc). They can also be run as part of scripts if you save them in a file ending in sh (ie test-script.sh) and make use of them as individual lines or in more complex scenarios.
 
-Confirm that you're running bash and not zsh...
 ```bash
+  # confirm that you're running bash and not zsh...
   echo $0
-```
+  echo $SHELL
 
-Switch into bash if you're working in zsh (use control+d to exit)...
-```bash
+  # switch into bash if you're in zsh (use control+d to exit)...
   bash
-```
-
-Switch into zsh if you're working in bash (just for fun?)...
-```bash
-  bash
+  
+  # switch into zsh if you're in bash (just for fun?)...
+  zsh
 ```
 
 📌 **Fun Fact:** You can open independent nested instances of bash inside of bash inside of zsh inside of bash etc etc.
 
-Make comments, echo / print stuff, declare variables and check them with echo...
+---
+
+## Comments Printing and Variables
 ```bash
   # make comments with single hash-tags like this!
   
@@ -64,8 +64,7 @@ Make comments, echo / print stuff, declare variables and check them with echo...
   
   # echo environment variables (case-sensitive)...
   echo $USER
-  echo $LANG
-  echo $PATH
+  echo $SHELL
   
   # check all environment variables...
   export
