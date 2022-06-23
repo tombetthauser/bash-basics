@@ -11,7 +11,7 @@ Some things I've found interesting and helpful as I've slowly learned how to mak
 ### Contents:
 * [what is bash](#what-is-bash)
 * [check your shell](#check-your-shell)
-* [comments printing & variables](#comments-printing-&-variables)
+* [comments printing & variables](#comments-printing--variables)
 
 ---
 
@@ -45,7 +45,7 @@ These are some very basic commands that can be run directly in your shell applic
 
 ---
 
-## Comments Printing & Variables
+## Comments Printing + Variables
 ```bash
   # make comments with single hash-tags like this!
   
