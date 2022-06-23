@@ -12,12 +12,13 @@ Some things I've found interesting and helpful as I've slowly learned how to mak
 * [what is bash](#what-is-bash)
 * [check your shell](#check-your-shell)
 * [comments printing & variables](#comments-printing--variables)
+* [if statements](#if-statements)
 
 ---
 
 ## What is Bash?
 
-Bash is referred to as a Unix or command line language and is an abbreviation of Bourne Again Shell. This is a reference to an earlier similar Unix shell command language (Bourne Shell) which was named after Stephen Bourne who developed it in the 1970's at Bell Labs. Bash was specifically developed as part of the Free Software Movement / GNU movement as a free alternative to other similar languages that were changing to for-profit endeavors.
+Bash is referred to as a Unix or command line language and is an abbreviation of Bourne Again Shell. This is a reference to an earlier similar Unix shell command language (Bourne Shell) which was named after Stephen Bourne who developed it in the 1970's at Bell Labs. Bash was specifically developed as part of the Free Software Movement / GNU as a free alternative to other similar languages that were changing to for-profit models.
 
 Bash is a syntax for communicating directly with Unix systems. Unix systems differentiate themselves from prior systems because they are built for running multiple processes concurrently. Historically on prior systems like DOS multiple processes could not be run on a single machine at the same time, and multiple users could not work on / share the same system concurrently. 
 
@@ -45,7 +46,7 @@ These are some very basic commands that can be run directly in your shell applic
 
 ---
 
-## Comments Printing + Variables
+## Comments Printing & Variables
 ```bash
   # make comments with single hash-tags like this!
   
@@ -53,7 +54,7 @@ These are some very basic commands that can be run directly in your shell applic
   echo hello world!
   
   # declare variables (cant use spaces)...
-  a=10
+  a=42
   b=hello
   c='hello world!'
   
@@ -62,11 +63,53 @@ These are some very basic commands that can be run directly in your shell applic
   echo $b
   echo $c
   
+  # re-assign and exising variable...
+  a=2501
+  
   # echo environment variables (case-sensitive)...
   echo $USER
   echo $SHELL
   
   # check all environment variables...
   export
+```
+
+---
+
+If Statements
+```bash
+  # some basic conditionals...
+
+  if [ 'something' ]
+  then
+    echo 'a string is truthy!'
+  fi
+
+  if []
+  then
+    echo 'this wont print!'
+  fi
+
+  if [ 1 = 1 ]
+  then
+    echo 'one equals one!'
+  fi
+  
+  if [ 1 = 42 ]
+  then
+    echo 'this wont print!'
+  fi
+  
+  if [ 'cat' = 'cat' ]
+  then
+    echo 'cat equals cat!'
+  fi
+  
+  if [ 1 = 1 ]
+  then echo 'one line then command!'
+  fi
+  
+  if [ 1 = 1 ]; then echo 'one line conditional!'; fi
+
 ```
 
