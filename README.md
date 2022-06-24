@@ -1,5 +1,7 @@
 ![panda bash](https://media.tenor.com/images/ea183b7108f1ca7b4788aea8b3d7a57b/tenor.gif)
 
+<!-- *(original mac did not support bash)* -->
+
 # Bash Basics
 
 Some things I've found interesting and helpful as I've slowly learned how to make practical use of bash scripts one silly project at a time. More geared towards making clunky scripts for automating file system stuff than advanced use of the shell for workflow optimization etc.
@@ -24,6 +26,10 @@ Bash is referred to as a Unix or command line language and is an abbreviation of
 Bash is a syntax for communicating directly with Unix systems. Unix systems differentiate themselves from prior systems because they are built for running multiple processes concurrently. Historically on prior systems like DOS multiple processes could not be run on a single machine at the same time, and multiple users could not work on / share the same system concurrently. 
 
 We don't have that much need for multiple users to share the same machine concurrently anymore (this was from back when computers were larger, more expensive and were often shared by multiple workers at different terminals) but we do take for granted that our computers can do more than one task at a time, and that we can open multiple shells in terminal windows, VS Code workspaces etc. We didn't always have these luxuries!
+
+[bash (wikipedia)](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+
+[unix (wikipedia)](https://en.wikipedia.org/wiki/Unix)
 
 ---
 
@@ -75,6 +81,23 @@ These are some very basic commands that can be run directly in your shell applic
   
   # check all environment variables...
   export
+  
+```
+
+```bash
+
+  # using variables as commands...
+  
+  e=echo
+  $e hello!
+
+  f='echo goodbye!'
+  $f
+  
+  # using list elements as commands...
+  l=('hello there!' echo)
+  ${l[1]} ${l[0]}
+  
 ```
 
 ---
@@ -84,7 +107,9 @@ These are some very basic commands that can be run directly in your shell applic
 These can be written directly in the shell but are probably best written in a script file and then run. Make a file ending in sh (my-script.sh), write any valid bash syntax, save it, exit your editor and then run the file by typing ```$ bash my-script.sh``` which will run all the files commands.
 
 ## If Statements
+
 ```bash
+
   # some basic conditionals...
 
   if [ 'something' ]
@@ -117,6 +142,10 @@ These can be written directly in the shell but are probably best written in a sc
   fi
   
   if [ 1 = 1 ]; then echo 'one line conditional!'; fi
+  
+```
+
+```bash
 
   # quotes are not needed if spaces aren't in variables...
   a="cat"
@@ -146,10 +175,24 @@ These can be written directly in the shell but are probably best written in a sc
   
 ```
 
+```bash
+
+  # some shorter conditional syntax examples...
+  
+  # if this file doesn't exist then create it...
+  [ ! -d tom.txt ] && touch tom.txt
+  
+  # if this file does exist then delete it...
+  [ -d tom.txt ] && rm tom.txt
+```
+
+
 ---
 
 ## Greater Than & Less Than
+
 ```bash
+
   if [ 1 -gt 0 ]
   then
     echo '1 is greater than 0!'
@@ -176,3 +219,19 @@ These can be written directly in the shell but are probably best written in a sc
   if [ "1" -lt 0 ]; then echo 'not true!'; fi
 
 ```
+
+---
+
+## User Input & Basic Debugging
+
+```bash
+  # print all commands as they are run...
+  set -x
+  
+  # pause to capture user input as a variable...
+  read input
+  echo $input
+
+```
+
+
