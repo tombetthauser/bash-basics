@@ -1,8 +1,8 @@
-![panda bash](https://media.tenor.com/images/ea183b7108f1ca7b4788aea8b3d7a57b/tenor.gif)
+<!-- ![panda bash](https://media.tenor.com/images/ea183b7108f1ca7b4788aea8b3d7a57b/tenor.gif) -->
 
 <!-- *(original mac did not support bash)* -->
 
-# Bash Basics
+# Some Bash Basics
 
 Some things I've found interesting and helpful as I've slowly learned how to make practical use of bash scripts one silly project at a time. More geared towards making clunky scripts for automating file system stuff than advanced use of the shell for workflow optimization etc.
 
@@ -235,3 +235,34 @@ These can be written directly in the shell but are probably best written in a sc
 ```
 
 
+---
+
+## Other Notes
+
+To be expanded on later with examples etc maybe.
+
+```bash
+
+\ 			            #breaks lines visually
+;			              # command separator
+[...] 			        # test brackets
+test 			          # utility interchangeable with test brackets
+[[...]] 		        # korn shell brackets for boolean logic / regex
+foo[1-5].txt		    # wild card range
+foo & 			        # run (foo) as background process
+sort < foo.txt	    # input redirection
+ls > foo.txt		    # output redirection
+cat foo.txt | sort	# pipes output as input
+!! 			            # reruns previous command
+${foo}			        # parameter expansion
+${foo:2:6}		      # slice string from index 2 to 6
+echo "\$100"		    # print $ as literal / non-special character
+touch hi-{tom,erin}.txt     # brace expansion
+$			              # introduces parameter expansion, 
+			              # command substitution or arithmetic expansion
+${parameter}			  # optional protective curly brackets 
+${foo:-bar}		      # if parameter foo is unset use string
+
+# ...
+
+```
