@@ -16,6 +16,8 @@ Some things I've found interesting and helpful as I've slowly learned how to mak
 * [comments printing & variables](#comments-printing--variables)
 * [if statements](#if-statements)
 * [greater than & less than](#greater-than--less-than)
+* [declaring & invoking functions](#declaring--invoking-functions)
+* [other notes](#other-notes)
 
 ---
 
@@ -234,6 +236,31 @@ These can be written directly in the shell but are probably best written in a sc
 
 ```
 
+---
+
+## Declaring & Invoking Functions
+
+```bash
+
+# define a function foo...
+foo () {
+  echo "foo!"
+}
+
+# invoke the new function...
+foo
+
+# make and call a function that takes arguments...
+bar () {
+  for arg in "#@"
+  do
+    echo $arg
+  done
+}
+
+foo hello there world
+
+```
 
 ---
 
